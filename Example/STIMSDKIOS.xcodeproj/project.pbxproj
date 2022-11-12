@@ -29,8 +29,8 @@
 
 /* Begin PBXFileReference section */
 		0E905EE636939057DED58539 /* Pods_STIMSDKIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIMSDKIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32A3FAF677289D19599EAC96 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		461F07A11DF4E16BCC040A29 /* STIMSDKIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = STIMSDKIOS.podspec; path = ../STIMSDKIOS.podspec; sourceTree = "<group>"; };
+		32A3FAF677289D19599EAC96 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		461F07A11DF4E16BCC040A29 /* STIMSDKIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = STIMSDKIOS.podspec; path = ../STIMSDKIOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		464B5960BE1F37D77B903CFE /* Pods-STIMSDKIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIMSDKIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-STIMSDKIOS_Tests/Pods-STIMSDKIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4C358D33995E3DBA98723F7F /* Pods-STIMSDKIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIMSDKIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-STIMSDKIOS_Tests/Pods-STIMSDKIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* STIMSDKIOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIMSDKIOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7C76866AAEA19B4AD196A3F2 /* Pods-STIMSDKIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIMSDKIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-STIMSDKIOS_Example/Pods-STIMSDKIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		93A6081F628343851383793A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		93A6081F628343851383793A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		97209F8015B797F3F90B470D /* Pods_STIMSDKIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STIMSDKIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79F2C02074E7B01C406214F /* Pods-STIMSDKIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STIMSDKIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-STIMSDKIOS_Example/Pods-STIMSDKIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +86,6 @@
 				4C358D33995E3DBA98723F7F /* Pods-STIMSDKIOS_Tests.debug.xcconfig */,
 				464B5960BE1F37D77B903CFE /* Pods-STIMSDKIOS_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -228,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

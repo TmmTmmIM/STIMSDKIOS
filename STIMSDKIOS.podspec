@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'STIMSDKIOS/Classes/**/*'
+#  s.source_files = 'STIMSDKIOS/*.{h,m}'
   s.vendored_frameworks = 'STIMSDKIOS/IMSdk.framework'
   #s.resource_bundles = "IMSdk/Classes/Resources/*"
 
