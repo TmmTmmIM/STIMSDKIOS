@@ -34,6 +34,8 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'STIMSDKIOS/IMSdk.framework'
   #s.resource_bundles = "IMSdk/Classes/Resources/*"
   s.requires_arc = true
+  s.swift_version = '5.0'
+
 
   s.resource_bundles = {
      'STIMSDKIOS' => ['STIMSDKIOS/Assets/Resources/*']
