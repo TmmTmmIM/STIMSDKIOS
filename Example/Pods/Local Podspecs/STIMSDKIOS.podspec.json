@@ -1,8 +1,8 @@
 {
   "name": "STIMSDKIOS",
-  "version": "0.0.4",
-  "summary": "A short description of STIMSDKIOS.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.0.5",
+  "summary": "create STIMSDKIOS.",
+  "description": "create desc STIMSDKIOS.",
   "homepage": "https://github.com/TmmTmmIM/STIMSDKIOS",
   "license": {
     "type": "MIT",
@@ -13,13 +13,14 @@
   },
   "source": {
     "git": "https://github.com/TmmTmmIM/STIMSDKIOS.git",
-    "tag": "0.0.4"
+    "tag": "0.0.5"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "STIMSDKIOS/Classes/**/*",
   "vendored_frameworks": "STIMSDKIOS/IMSdk.framework",
+  "requires_arc": true,
+  "swift_versions": "5.0",
   "resource_bundles": {
     "STIMSDKIOS": [
       "STIMSDKIOS/Assets/Resources/*"
@@ -27,7 +28,7 @@
   },
   "dependencies": {
     "WCDB.swift": [
-      "~> 1.0.8.2"
+
     ],
     "Alamofire": [
       "~> 4.9.1"
@@ -74,5 +75,6 @@
     "R.swift": [
       "~> 5.4.0"
     ]
-  }
+  },
+  "swift_version": "5.0"
 }

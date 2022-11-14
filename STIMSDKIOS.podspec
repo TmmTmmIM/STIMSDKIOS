@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = '5.0'
 
-
+ s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' } 
   s.resource_bundles = {
      'STIMSDKIOS' => ['STIMSDKIOS/Assets/Resources/*']
   }
@@ -60,6 +60,6 @@ Pod::Spec.new do |s|
   s.dependency "RxGesture", '~> 4.0.2'
   s.dependency "Texture", '~> 3.0.0'
   s.dependency "NSObject+Rx", '~> 5.2.2'
-  s.dependency "R.swift", '~> 5.4.0'
+  s.dependency "R.swift", '~> 5.4.0', :modular_headers => true
   
 end
