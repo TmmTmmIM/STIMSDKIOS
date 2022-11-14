@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'STIMSDKIOS'
-  s.version          = '0.0.4'
-  s.summary          = 'A short description of STIMSDKIOS.'
+  s.version          = '0.0.5'
+  s.summary          = 'create STIMSDKIOS.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  create desc STIMSDKIOS.
                        DESC
 
   s.homepage         = 'https://github.com/TmmTmmIM/STIMSDKIOS'
@@ -33,6 +33,7 @@ TODO: Add long description of the pod here.
 #  s.source_files = 'STIMSDKIOS/*.{h,m}'
   s.vendored_frameworks = 'STIMSDKIOS/IMSdk.framework'
   #s.resource_bundles = "IMSdk/Classes/Resources/*"
+  s.requires_arc = true
 
   s.resource_bundles = {
      'STIMSDKIOS' => ['STIMSDKIOS/Assets/Resources/*']
