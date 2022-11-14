@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'sqlite3', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
   s.dependency "WCDB.swift", '~> 1.0.8.2'
@@ -60,6 +60,6 @@ Pod::Spec.new do |s|
   s.dependency "RxGesture", '~> 4.0.2'
   s.dependency "Texture", '~> 3.0.0'
   s.dependency "NSObject+Rx", '~> 5.2.2'
-  s.dependency "R.swift", '~> 5.4.0'
+  s.dependency "R.swift", '= 5.4.0'
   
 end
