@@ -60,6 +60,6 @@ Pod::Spec.new do |s|
   s.dependency "RxGesture", '~> 4.0.2'
   s.dependency "Texture", '~> 3.0.0'
   s.dependency "NSObject+Rx", '~> 5.2.2'
-  s.dependency "R.swift", '~> 5.4.0', :modular_headers => true
+  s.dependency "R.swift", '~> 5.4.0'
   
 end

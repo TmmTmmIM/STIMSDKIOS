@@ -21,6 +21,9 @@
   "vendored_frameworks": "STIMSDKIOS/IMSdk.framework",
   "requires_arc": true,
   "swift_versions": "5.0",
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
   "resource_bundles": {
     "STIMSDKIOS": [
       "STIMSDKIOS/Assets/Resources/*"
@@ -28,7 +31,7 @@
   },
   "dependencies": {
     "WCDB.swift": [
-
+      "~> 1.0.8.2"
     ],
     "Alamofire": [
       "~> 4.9.1"
