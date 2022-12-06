@@ -5,7 +5,8 @@ platform :ios, '10.0'
 target 'STIMSDKIOS_Example' do
     use_modular_headers!
   pod 'STIMSDKIOS', :path => '../'
-
+  pod 'QMUIKit'
+  pod 'SVProgressHUD'
   target 'STIMSDKIOS_Tests' do
     inherit! :search_paths
 

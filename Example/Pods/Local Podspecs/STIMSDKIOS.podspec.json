@@ -1,6 +1,6 @@
 {
   "name": "STIMSDKIOS",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "summary": "create STIMSDKIOS.",
   "description": "create desc STIMSDKIOS.",
   "homepage": "https://github.com/TmmTmmIM/STIMSDKIOS",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/TmmTmmIM/STIMSDKIOS.git",
-    "tag": "0.0.5"
+    "tag": "0.0.6"
   },
   "platforms": {
     "ios": "10.0"
