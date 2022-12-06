@@ -527,7 +527,7 @@ SWIFT_PROTOCOL("_TtP5IMSdk10IMDelegate_")
 - (void)onShowConversationMarkerWithAChatIds:(NSArray<NSString *> * _Nonnull)aChatIds;
 @end
 
-typedef SWIFT_ENUM(NSInteger, IMEnvironmentType, closed) {
+typedef SWIFT_ENUM(NSInteger, IMEnvironmentType, open) {
   IMEnvironmentTypePro = 1,
   IMEnvironmentTypeAlpha = 2,
 };
@@ -634,7 +634,7 @@ SWIFT_CLASS("_TtC5IMSdk11SwipeAction")
 @end
 
 
-typedef SWIFT_ENUM(NSInteger, SwipeDirection, closed) {
+typedef SWIFT_ENUM(NSInteger, SwipeDirection, open) {
   SwipeDirectionLeft = 0,
   SwipeDirectionRight = 1,
 };
@@ -939,7 +939,7 @@ SWIFT_CLASS("_TtC5IMSdk10TMLanguage")
 + (NSString * _Nonnull)getTrueLanguageTypeString SWIFT_WARN_UNUSED_RESULT;
 @end
 
-typedef SWIFT_ENUM(NSInteger, TMLanguageSettingType, closed) {
+typedef SWIFT_ENUM(NSInteger, TMLanguageSettingType, open) {
   TMLanguageSettingTypeAuto = 0,
   TMLanguageSettingTypeEn = 1,
   TMLanguageSettingTypeTr = 2,
@@ -1148,7 +1148,7 @@ SWIFT_CLASS("_TtC5IMSdk15TMTransferLogic")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, TMTransferProgressState, closed) {
+typedef SWIFT_ENUM(NSInteger, TMTransferProgressState, open) {
   TMTransferProgressStateFailureMin = -100,
   TMTransferProgressStateStart = 0,
   TMTransferProgressStateSuccess = 100,
@@ -1156,7 +1156,7 @@ typedef SWIFT_ENUM(NSInteger, TMTransferProgressState, closed) {
   TMTransferProgressStateWait = 600,
 };
 
-typedef SWIFT_ENUM(NSInteger, TMTransferSence, closed) {
+typedef SWIFT_ENUM(NSInteger, TMTransferSence, open) {
   TMTransferSenceIM = 1,
   TMTransferSenceMoments = 2,
 };
@@ -1462,13 +1462,13 @@ SWIFT_CLASS("_TtC5IMSdk14TmMessageExtra")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, TmMessageExtraActType, closed) {
+typedef SWIFT_ENUM(NSInteger, TmMessageExtraActType, open) {
   TmMessageExtraActTypeNormal = 0,
   TmMessageExtraActTypeForward = 1,
   TmMessageExtraActTypeReference = 2,
 };
 
-typedef SWIFT_ENUM(NSInteger, TmMessageExtraDiviceType, closed) {
+typedef SWIFT_ENUM(NSInteger, TmMessageExtraDiviceType, open) {
   TmMessageExtraDiviceTypeIos = 1,
   TmMessageExtraDiviceTypeAndroid = 2,
   TmMessageExtraDiviceTypeMac = 3,

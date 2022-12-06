@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'STIMSDKIOS'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'create STIMSDKIOS.'
 
 # This description is used to generate tags and improve search results.
@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'sqlite3', 'MapKit'
+  # s.frameworks =  'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
   s.dependency "WCDB.swift", '~> 1.0.8.2'
