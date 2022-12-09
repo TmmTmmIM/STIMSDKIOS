@@ -35,11 +35,12 @@ Pod::Spec.new do |s|
   #s.resource_bundles = "IMSdk/Classes/Resources/*"
   s.requires_arc = true
   s.swift_version = '5.0'
+  s.resources = "IMSdk-iOS/Class/Resources/*"
 
  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' } 
-  s.resource_bundles = {
-     'STIMSDKIOS' => ['STIMSDKIOS/Assets/Resources/*']
-  }
+  # s.resource_bundles = {
+  #    'STIMSDKIOS' => ['STIMSDKIOS/Assets/Resources/*']
+  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks =  'MapKit'
