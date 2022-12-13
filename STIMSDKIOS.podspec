@@ -38,9 +38,9 @@ Pod::Spec.new do |s|
   s.resources = "STIMSDKIOS/Class/Resources/*"
 
  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' } 
-  # s.resource_bundles = {
-  #    'STIMSDKIOS' => ['STIMSDKIOS/Assets/Resources/*']
-  # }
+  s.resource_bundles = {
+     'STIMSDKIOS' => ['STIMSDKIOS/Class/Resources/*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks =  'MapKit'
