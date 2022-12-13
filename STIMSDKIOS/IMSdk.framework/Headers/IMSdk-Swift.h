@@ -340,6 +340,7 @@ SWIFT_CLASS("_TtC5IMSdk11CardMessage")
 
 @class FilePreView;
 @class TMImageBrowserView;
+@class UIView;
 
 SWIFT_PROTOCOL("_TtP5IMSdk12ChatDelegate_")
 @protocol ChatDelegate <NSObject>
@@ -350,6 +351,7 @@ SWIFT_PROTOCOL("_TtP5IMSdk12ChatDelegate_")
 - (void)onMiddleMessageClickWithAMid:(NSString * _Nonnull)aMid tmpId:(NSString * _Nonnull)tmpId buttonId:(NSString * _Nonnull)buttonId;
 - (void)onNoticeMessageClickWithAMid:(NSString * _Nonnull)aMid buttonId:(NSString * _Nonnull)buttonId;
 - (void)getMessageUnReadCountWithCount:(NSInteger)count;
+- (void)getCustomViewWithAMid:(NSString * _Nonnull)aMid body:(NSString * _Nonnull)body handleCustomView:(void (^ _Nullable)(UIView * _Nonnull))handleCustomView tapCustomView:(void (^ _Nullable)(UIView * _Nonnull))tapCustomView;
 @end
 
 @class UIImageView;
@@ -379,6 +381,7 @@ SWIFT_CLASS("_TtC5IMSdk8ChatView")
 
 
 @interface ChatView (SWIFT_EXTENSION(IMSdk)) <ChatDetailCheckDelegate>
+- (void)getCustomView:(NSString * _Null_unspecified)amid body:(NSString * _Null_unspecified)body handleCustomView:(void (^ _Null_unspecified)(UIView * _Nullable))handle tapCustomView:(void (^ _Null_unspecified)(UIView * _Nullable))tap;
 - (void)tapCardButonIndexPath:(NSString * _Null_unspecified)amid buttonId:(NSString * _Null_unspecified)buttonId;
 - (void)tapfileAtIndexPath:(NSString * _Null_unspecified)mid;
 - (void)tapImageAtIndexPath:(NSString * _Null_unspecified)chatId messageId:(NSInteger)messageId;
@@ -462,6 +465,13 @@ SWIFT_CLASS("_TtC5IMSdk16ConversationView")
 
 @interface ConversationView (SWIFT_EXTENSION(IMSdk)) <ChannelListCheckDelegate>
 - (void)didSelectAchatId:(NSString * _Nonnull)aChatId;
+@end
+
+
+SWIFT_PROTOCOL("_TtP5IMSdk27ConversionViewModelDelegate_")
+@protocol ConversionViewModelDelegate <NSObject>
+@optional
+- (void)conversationUnReadNumChange;
 @end
 
 
@@ -842,9 +852,10 @@ SWIFT_CLASS("_TtC5IMSdk21TMConversionViewModel")
 @property (nonatomic) NSInteger unReadCount;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull partChatIds;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull unPartChatIds;
-@property (nonatomic, strong) TmConversationInfo * _Nullable folderConversionInfo;
 - (void)setSortWithSortCalsure:(BOOL (^ _Nonnull)(TmConversationInfo * _Nonnull, TmConversationInfo * _Nonnull))sortCalsure;
 - (NSArray<TmConversationInfo *> * _Nonnull)getSortListWithList:(NSArray<TmConversationInfo *> * _Nonnull)list SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 + (TMConversionViewModel * _Nonnull)createConversationViewModelWithSelector:(id <TMConversionSelector> _Nonnull)selector SWIFT_WARN_UNUSED_RESULT;
 - (void)getUnReadCountWithSuccess:(void (^ _Nullable)(NSInteger))success;
 - (void)setChatTopWithAChatId:(NSString * _Nonnull)aChatId success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
@@ -855,7 +866,15 @@ SWIFT_CLASS("_TtC5IMSdk21TMConversionViewModel")
 - (ConversationView * _Nonnull)getConversionView SWIFT_WARN_UNUSED_RESULT;
 - (void)updateSelectorWithAddAchatIds:(NSArray<NSString *> * _Nonnull)addAchatIds removeAchatIds:(NSArray<NSString *> * _Nonnull)removeAchatIds;
 - (void)setFolderWithAChatId:(NSString * _Nonnull)aChatId content:(NSString * _Nonnull)content name:(NSString * _Nonnull)name imageData:(NSData * _Nonnull)imageData imageFormat:(NSString * _Nonnull)imageFormat;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5IMSdk15TMCustomizeCell")
+@interface TMCustomizeCell : UITableViewCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
+- (void)setupModel:(TMMessageModel * _Nonnull)model;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 @end
 
 @class TMFaceAttachment;
@@ -1079,6 +1098,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (NSString * _Nullable)localizedWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+@interface TMSwiftOcBridge (SWIFT_EXTENSION(IMSdk))
++ (NSString * _Nonnull)randomString:(NSInteger)count SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)generateIv SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UITextView;
 @class UITextField;
 
@@ -1099,12 +1124,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// -Parameter decimalNumberCount: Number of decimal places
 /// -Parameter maxNumber: maximum value
 - (BOOL)validateNumberInputWithTextField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)shouldChangeCharactersInRange replacementString:(NSString * _Nonnull)replacementString decimalNumberCount:(NSInteger)decimalNumberCount maxNumber:(NSString * _Nonnull)maxNumber SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface TMSwiftOcBridge (SWIFT_EXTENSION(IMSdk))
-+ (NSString * _Nonnull)randomString:(NSInteger)count SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nonnull)generateIv SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1436,6 +1455,8 @@ SWIFT_CLASS("_TtC5IMSdk16TmMessageContent")
 @property (nonatomic, copy) NSString * _Nonnull addr;
 @property (nonatomic, copy) NSString * _Nonnull desc;
 @property (nonatomic, copy) NSString * _Nonnull zoom;
+@property (nonatomic, copy) NSString * _Nonnull title;
+@property (nonatomic, copy) NSString * _Nonnull body;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nonnull)getFileIdWithBusId:(NSString * _Nonnull)busId SWIFT_WARN_UNUSED_RESULT;
 @end

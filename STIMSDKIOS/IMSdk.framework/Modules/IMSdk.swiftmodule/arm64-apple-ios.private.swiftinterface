@@ -100,11 +100,13 @@ public typealias TMCommonClosure = (_ obj: Any?) -> Swift.Void
 public typealias TMCommonErrorClosure = (_ error: Swift.Error) -> Swift.Void
 public let THUMB_MIN_WIDTH: Swift.Int
 public let THUMB_MIN_HEIGHT: Swift.Int
-@objc @_inheritsConvenienceInitializers @objcMembers public class TMConversionViewModel : ObjectiveC.NSObject {
+@objc public protocol ConversionViewModelDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func conversationUnReadNumChange()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class TMConversionViewModel : ObjectiveC.NSObject {
   @objc public var unReadCount: Swift.Int
   @objc public var partChatIds: [Swift.String]
   @objc public var unPartChatIds: [Swift.String]
-  @objc public var folderConversionInfo: IMSdk.TmConversationInfo?
   public typealias ConversationSortCalsure = (IMSdk.TmConversationInfo, IMSdk.TmConversationInfo) -> Swift.Bool
   @objc public func setSort(sortCalsure: @escaping IMSdk.TMConversionViewModel.ConversationSortCalsure)
   @objc public func getSortList(list: [IMSdk.TmConversationInfo]) -> [IMSdk.TmConversationInfo]
@@ -118,7 +120,6 @@ public let THUMB_MIN_HEIGHT: Swift.Int
   @objc public func getConversionView() -> IMSdk.ConversationView
   @objc public func updateSelector(addAchatIds: [Swift.String] = [], removeAchatIds: [Swift.String] = [])
   @objc public func setFolder(aChatId: Swift.String, content: Swift.String, name: Swift.String, imageData: Foundation.Data, imageFormat: Swift.String)
-  @objc override dynamic public init()
   @objc deinit
 }
 extension Swift.String {
@@ -949,6 +950,11 @@ extension IMSdk.TMImageBrowserView : IMSdk.BrowserCheckDelegate {
   @objc override dynamic public func main()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class TMCustomizeCell : UIKit.UITableViewCell {
+  @objc @_Concurrency.MainActor(unsafe) public func setupModel(_ model: IMSdk.TMMessageModel)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func setSelected(_ selected: Swift.Bool, animated: Swift.Bool)
+  @objc deinit
+}
 extension Swift.String {
   public var yh_jsonDecode: Any? {
     get
@@ -1181,6 +1187,7 @@ extension AsyncDisplayKit.ASDisplayNode {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
 }
 extension IMSdk.ChatView : IMSdk.ChatDetailCheckDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func getCustomView(_ amid: Swift.String!, body: Swift.String!, handleCustomView handle: ((UIKit.UIView?) -> Swift.Void)!, tapCustomView tap: ((UIKit.UIView?) -> Swift.Void)!)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tapCardButonIndexPath(_ amid: Swift.String!, buttonId: Swift.String!)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tapfile(atIndexPath mid: Swift.String!)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tapImage(atIndexPath chatId: Swift.String!, messageId: Swift.Int)
@@ -1573,6 +1580,8 @@ public protocol SwipeActionViewDelegate : AnyObject {
   @objc public var addr: Swift.String
   @objc public var desc: Swift.String
   @objc public var zoom: Swift.String
+  @objc public var title: Swift.String
+  @objc public var body: Swift.String
   @objc required override dynamic public init()
   @objc public func getFileId(busId: Swift.String) -> Swift.String
   @objc deinit
@@ -1973,6 +1982,7 @@ extension RxSwift.Reactive where Base : AsyncDisplayKit.ASImageNode {
   @objc optional func onMiddleMessageClick(aMid: Swift.String, tmpId: Swift.String, buttonId: Swift.String)
   @objc optional func onNoticeMessageClick(aMid: Swift.String, buttonId: Swift.String)
   @objc optional func getMessageUnReadCount(count: Swift.Int)
+  @objc optional func getCustomView(aMid: Swift.String, body: Swift.String, handleCustomView: ((UIKit.UIView) -> ())?, tapCustomView: ((UIKit.UIView) -> ())?)
 }
 public struct TmMessageStatus {
 }
