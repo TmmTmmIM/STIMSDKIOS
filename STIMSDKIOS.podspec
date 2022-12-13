@@ -32,10 +32,10 @@ Pod::Spec.new do |s|
 
 #  s.source_files = 'STIMSDKIOS/*.{h,m}'
   s.vendored_frameworks = 'STIMSDKIOS/IMSdk.framework'
-  s.resource_bundles = "STIMSDKIOS/Assets/Resources/*"
+  # s.resource_bundles = "STIMSDKIOS/Assets/Resources/*"
   s.requires_arc = true
   s.swift_version = '5.0'
-  # s.resources = "STIMSDKIOS/Class/Resources/*"
+  s.resources = "STIMSDKIOS/Class/Resources/*"
 
  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' } 
   # s.resource_bundles = {
