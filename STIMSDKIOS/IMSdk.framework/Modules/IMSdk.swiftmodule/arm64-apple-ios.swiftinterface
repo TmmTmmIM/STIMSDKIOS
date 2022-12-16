@@ -110,6 +110,7 @@ public let THUMB_MIN_HEIGHT: Swift.Int
   public typealias ConversationSortCalsure = (IMSdk.TmConversationInfo, IMSdk.TmConversationInfo) -> Swift.Bool
   @objc public func setSort(sortCalsure: @escaping IMSdk.TMConversionViewModel.ConversationSortCalsure)
   @objc public func getSortList(list: [IMSdk.TmConversationInfo]) -> [IMSdk.TmConversationInfo]
+  @objc public func setDelegate(delegate: IMSdk.ConversionViewModelDelegate)
   @objc public static func createConversationViewModel(selector: IMSdk.TMConversionSelector) -> IMSdk.TMConversionViewModel
   @objc public func getUnReadCount(success: ((Swift.Int) -> ())?)
   @objc public func setChatTop(aChatId: Swift.String, success: (() -> ())?, fail: ((Swift.String) -> ())?)
@@ -118,7 +119,7 @@ public let THUMB_MIN_HEIGHT: Swift.Int
   @objc public func getChatIds() -> [Swift.String]
   @objc public func filterChatIds(chatIds: [Swift.String]) -> [Swift.String]
   @objc public func getConversionView() -> IMSdk.ConversationView
-  @objc public func updateSelector(addAchatIds: [Swift.String] = [], removeAchatIds: [Swift.String] = [])
+  @objc public func updateSelector(selectAchatIds: [Swift.String] = [], unSelectAchatIds: [Swift.String] = [])
   @objc public func setFolder(aChatId: Swift.String, content: Swift.String, name: Swift.String, imageData: Foundation.Data, imageFormat: Swift.String)
   @objc deinit
 }
@@ -1184,6 +1185,13 @@ extension AsyncDisplayKit.ASDisplayNode {
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc @_Concurrency.MainActor(unsafe) public func setDelegate(delegate: IMSdk.ChatDelegate)
+  @objc @_Concurrency.MainActor(unsafe) public func setTableViewContentInset(inset: UIKit.UIEdgeInsets)
+  @objc @_Concurrency.MainActor(unsafe) public func setTableViewScrollIndicatorInsets(inset: UIKit.UIEdgeInsets)
+  @objc @_Concurrency.MainActor(unsafe) public func setTableViewContentOffset(offset: CoreFoundation.CGPoint, animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) public func getTableViewContentInset() -> UIKit.UIEdgeInsets
+  @objc @_Concurrency.MainActor(unsafe) public func getTableViewScrollIndicatorInsets() -> UIKit.UIEdgeInsets
+  @objc @_Concurrency.MainActor(unsafe) public func getTableViewContentOffset() -> CoreFoundation.CGPoint
+  @objc @_Concurrency.MainActor(unsafe) public func getTableViewContentSize() -> CoreFoundation.CGSize
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
 }
 extension IMSdk.ChatView : IMSdk.ChatDetailCheckDelegate {
