@@ -39,14 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getChatId:(NSString *)chatId;
 
-- (void)setTableViewContentInset:(UIEdgeInsets)inset;
-- (void)setTableViewScrollIndicatorInsets:(UIEdgeInsets)inset;
-- (void)setTableViewContentOffset:(CGPoint)offset animated:(BOOL)animated;
-- (UIEdgeInsets)getTableViewContentInset;
-- (UIEdgeInsets)getTableViewScrollIndicatorInsets;
-- (CGPoint)getTableViewContentOffset;
-- (CGSize)getTableViewContentSize;
-
 
 @end
 
