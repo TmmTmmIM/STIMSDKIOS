@@ -375,13 +375,6 @@ SWIFT_CLASS("_TtC5IMSdk8ChatView")
 @interface ChatView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)setDelegateWithDelegate:(id <ChatDelegate> _Nonnull)delegate;
-- (void)setTableViewContentInsetWithInset:(UIEdgeInsets)inset;
-- (void)setTableViewScrollIndicatorInsetsWithInset:(UIEdgeInsets)inset;
-- (void)setTableViewContentOffsetWithOffset:(CGPoint)offset animated:(BOOL)animated;
-- (UIEdgeInsets)getTableViewContentInset SWIFT_WARN_UNUSED_RESULT;
-- (UIEdgeInsets)getTableViewScrollIndicatorInsets SWIFT_WARN_UNUSED_RESULT;
-- (CGPoint)getTableViewContentOffset SWIFT_WARN_UNUSED_RESULT;
-- (CGSize)getTableViewContentSize SWIFT_WARN_UNUSED_RESULT;
 - (void)layoutSubviews;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
@@ -863,7 +856,6 @@ SWIFT_CLASS("_TtC5IMSdk21TMConversionViewModel")
 - (NSArray<TmConversationInfo *> * _Nonnull)getSortListWithList:(NSArray<TmConversationInfo *> * _Nonnull)list SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)setDelegateWithDelegate:(id <ConversionViewModelDelegate> _Nonnull)delegate;
 + (TMConversionViewModel * _Nonnull)createConversationViewModelWithSelector:(id <TMConversionSelector> _Nonnull)selector SWIFT_WARN_UNUSED_RESULT;
 - (void)getUnReadCountWithSuccess:(void (^ _Nullable)(NSInteger))success;
 - (void)setChatTopWithAChatId:(NSString * _Nonnull)aChatId success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
@@ -872,7 +864,7 @@ SWIFT_CLASS("_TtC5IMSdk21TMConversionViewModel")
 - (NSArray<NSString *> * _Nonnull)getChatIds SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<NSString *> * _Nonnull)filterChatIdsWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds SWIFT_WARN_UNUSED_RESULT;
 - (ConversationView * _Nonnull)getConversionView SWIFT_WARN_UNUSED_RESULT;
-- (void)updateSelectorWithSelectAchatIds:(NSArray<NSString *> * _Nonnull)selectAchatIds unSelectAchatIds:(NSArray<NSString *> * _Nonnull)unSelectAchatIds;
+- (void)updateSelectorWithAddAchatIds:(NSArray<NSString *> * _Nonnull)addAchatIds removeAchatIds:(NSArray<NSString *> * _Nonnull)removeAchatIds;
 - (void)setFolderWithAChatId:(NSString * _Nonnull)aChatId content:(NSString * _Nonnull)content name:(NSString * _Nonnull)name imageData:(NSData * _Nonnull)imageData imageFormat:(NSString * _Nonnull)imageFormat;
 @end
 
