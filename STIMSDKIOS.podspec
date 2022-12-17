@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'STIMSDKIOS'
-  s.version          = '0.0.13'
+  s.version          = '0.0.14'
   s.summary          = 'create STIMSDKIOS.'
 
 # This description is used to generate tags and improve search results.
