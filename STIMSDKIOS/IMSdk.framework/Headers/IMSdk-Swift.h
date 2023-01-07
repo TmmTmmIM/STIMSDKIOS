@@ -533,13 +533,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FileUploadPr
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class TmReceiveMessageInfo;
 
 SWIFT_PROTOCOL("_TtP5IMSdk10IMDelegate_")
 @protocol IMDelegate <NSObject>
 @optional
 - (void)authCodeExpireWithAUid:(NSString * _Nonnull)aUid;
 - (void)onShowUserInfoWithAUids:(NSArray<NSString *> * _Nonnull)aUids;
-- (void)onReceiveMessageWithAMids:(NSArray<NSString *> * _Nonnull)aMids;
+- (void)onReceiveMessageWithReceiveMessageList:(NSArray<TmReceiveMessageInfo *> * _Nonnull)receiveMessageList;
 - (void)onShowConversationSubTitleWithAChatIds:(NSArray<NSString *> * _Nonnull)aChatIds;
 - (void)onShowConversationMarkerWithAChatIds:(NSArray<NSString *> * _Nonnull)aChatIds;
 @end
@@ -579,7 +580,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IMSdk * _Nullable shar
 - (NSArray<TmMessage *> * _Nonnull)getMassagesWithAChatId:(NSString * _Nonnull)aChatId SWIFT_WARN_UNUSED_RESULT;
 - (void)joinTestGroupWithSuccess:(void (^ _Nullable)(NSString * _Nonnull))success fail:(void (^ _Nullable)(NSString * _Nonnull))fail;
 - (void)setConversationWithAChatId:(NSString * _Nonnull)aChatId isMute:(BOOL)isMute;
-- (void)startSocket;
 - (void)setUserInfoWithUserInfos:(NSArray<UserInfoModel *> * _Nonnull)userInfos complete:(void (^ _Nullable)(NSInteger))complete;
 - (void)setConversationSubTitleWithSubTitles:(NSArray<ConversationSubTitle *> * _Nonnull)subTitles;
 - (void)setConversationMarkerWithMarkers:(NSArray<ConversationMarker *> * _Nonnull)markers;
@@ -1515,6 +1515,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=defau
 - (NSInteger)getConversationUnReadCountWithChatId:(NSString * _Nonnull)chatId SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)getTotalUnread SWIFT_WARN_UNUSED_RESULT;
 - (NSDictionary<NSString *, NSNumber *> * _Nonnull)getAtStatusWithChatsWithChatIds:(NSArray<NSString *> * _Nonnull)chatIds SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5IMSdk20TmReceiveMessageInfo")
+@interface TmReceiveMessageInfo : NSObject
+@property (nonatomic, copy) NSString * _Nonnull amid;
+@property (nonatomic, copy) NSString * _Nonnull aChatId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
