@@ -891,8 +891,6 @@ SWIFT_CLASS("_TtC5IMSdk11TMEmojiTool")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong, getter=default) TMEmojiTool * _Nonnull default_;)
 + (TMEmojiTool * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<TMFaceAttachment *> * _Nonnull)getFaceAttachments SWIFT_WARN_UNUSED_RESULT;
-- (void)preGetUserFaceHistory;
-- (void)clickFaceCodeWithCode:(NSString * _Nonnull)code;
 - (NSArray<TMFaceAttachment *> * _Nonnull)getHistroyFace SWIFT_WARN_UNUSED_RESULT;
 /// 12345[cry]678910[shy][cry]12034    replace [shy] with ‘&’,  length 1
 - (NSString * _Nonnull)converStrWithStr:(NSString * _Nonnull)str replaceString:(NSString * _Nonnull)replaceString SWIFT_WARN_UNUSED_RESULT;
